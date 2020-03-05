@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class Navigation extends React.Component<any, any>  {
 
@@ -15,6 +16,8 @@ class Navigation extends React.Component<any, any>  {
           name='home'
           active={activeItem === 'home'}
           // onClick={this.handleItemClick}
+          as={Link}
+          to= {"/"}
         >
           Home
         </Menu.Item>
@@ -23,6 +26,8 @@ class Navigation extends React.Component<any, any>  {
           name='newEmployee'
           active={activeItem === 'newEmployee'}
           // onClick={this.handleItemClick}
+          as={Link}
+          to= {"/new-employee"}
         >
           New Employee
         </Menu.Item>
