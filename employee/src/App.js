@@ -1,13 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
-import { Button } from 'semantic-ui-react'
+import Navigation from './components/navigation/Navigation'
+import Employees from './employees/Employees'
+import Employee from './employees/employee/Employee'
+import NewEmployee from './employees/new-employee/New-employee'
+
 
 function App() {
   return (
-    <div className="App">
-      <Button primary> React App</Button>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navigation/>
+        <Switch>
+          <Route path="/" exact component={Employees} />
+          <Route path="/employees" exact component={Employees} />
+          <Route path="/employee" exact component={Employee} />
+          <Route path="/new-employee" exact component={NewEmployee} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
