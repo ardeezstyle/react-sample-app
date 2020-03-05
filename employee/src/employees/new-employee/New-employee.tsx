@@ -4,7 +4,7 @@ class NewEmployee extends React.Component<any, any>  {
   public render() {
     return (
       <div>
-        NewEmployee
+        New Employee
       </div>
     );
   }
