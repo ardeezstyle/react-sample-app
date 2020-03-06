@@ -1,23 +1,28 @@
 import * as React from 'react';
 import { Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class Navigation extends React.Component<any, any>  {
-  
-  state = {}
 
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  state = {
+    activeItem: ''
+  }
+
+  handleItemClick = (name: string) => {
+    this.setState({ activeItem: name });
+  }
 
   public render() {
-    const activeItem = this.state
+    const {activeItem} = this.state;
+
     return (
       <Menu>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}
-          // onClick={this.handleItemClick}
-          as={Link}
-          to= {"/"}
+          onClick={() => this.handleItemClick('home')}
+          as={NavLink}
+          to= {"/employees"}
         >
           Home
         </Menu.Item>
@@ -25,8 +30,8 @@ class Navigation extends React.Component<any, any>  {
         <Menu.Item
           name='newEmployee'
           active={activeItem === 'newEmployee'}
-          // onClick={this.handleItemClick}
-          as={Link}
+          onClick={() => this.handleItemClick('newEmployee')}
+          as={NavLink}
           to= {"/new-employee"}
         >
           New Employee
@@ -37,4 +42,3 @@ class Navigation extends React.Component<any, any>  {
 }
 
 export default Navigation;
-  
