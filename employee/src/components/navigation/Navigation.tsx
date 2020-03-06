@@ -3,7 +3,7 @@ import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 class Navigation extends React.Component<any, any>  {
-
+  
   state = {}
 
   // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
