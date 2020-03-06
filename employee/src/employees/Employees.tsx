@@ -12,7 +12,7 @@ class Employees extends React.Component<any, any>  {
 
   public render() {
     return (
-      <div>
+      <div style={{padding:'50px'}}>
         <Header as="h2"> Employees </Header>
         <Table celled>
           <Table.Header>
