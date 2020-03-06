@@ -14,7 +14,7 @@ function App() {
         <Navigation/>
         <Switch>
           <Route path="/employees" exact component={Employees} />
-          <Route path="/employee/" exact component={Employee} />
+          <Route path="/employee" exact component={Employee} />
           <Route path="/new-employee" exact component={NewEmployee} />
           <Route exact path="/" render={() => (<Redirect to="/employees" />)} />
         </Switch>
