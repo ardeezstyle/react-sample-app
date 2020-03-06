@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom'
 import './App.css';
 import Navigation from './components/navigation/Navigation'
 import Employees from './employees/Employees'
@@ -13,10 +13,10 @@ function App() {
       <div className="App">
         <Navigation/>
         <Switch>
-          <Route path="/" exact component={Employees} />
           <Route path="/employees" exact component={Employees} />
           <Route path="/employee" exact component={Employee} />
           <Route path="/new-employee" exact component={NewEmployee} />
+          <Route exact path="/" render={() => (<Redirect to="/employees" />)} />
         </Switch>
       </div>
     </BrowserRouter>
