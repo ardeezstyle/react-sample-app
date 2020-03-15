@@ -17,6 +17,11 @@ class Employees extends React.Component<any, any>  {
     todoService.getAllTodos().then((response: any) => this.setState({ todos: response.data, done: true }));
 
     // todoService.getTodo(10).then((res: any) => console.log(res))
+
+
+    todoService.getUsers().then((res: any) => console.log(res));
+
+
   }
 
   getTodoList = () => {
